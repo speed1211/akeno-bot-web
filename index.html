@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akeno Bot</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Floating particles background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Lightning overlay -->
+    <div class="lightning-overlay" id="lightning"></div>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-symbol">⚡</span>
+                <span class="logo-text">AKENO</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero" class="nav-link">Ana Sayfa</a></li>
+                <li><a href="#features" class="nav-link">Özellikler</a></li>
+                <li><a href="#commands" class="nav-link">Komutlar</a></li>
+                <li><a href="#invite" class="nav-link">Ekle</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-glow"></div>
+        <div class="hero-content">
+            <div class="hero-badge">⚡ Discord Bot</div>
+            <h1 class="hero-title">
+                <span class="title-line">AKENO</span>
+                <span class="title-sub">Kart Oyunu Botu</span>
+            </h1>
+            <p class="hero-desc">
+                Anime karakterlerini kart olarak topla, düellolarda savaş,<br>
+                pazarda al-sat yap ve Sakura biriktir. 7 nadirlik seviyesi seni bekliyor.
+            </p>
+            <div class="hero-buttons">
+                <a href="#invite" class="btn btn-primary">
+                    <i class="fab fa-discord"></i> Sunucuna Ekle
+                </a>
+                <a href="#commands" class="btn btn-secondary">
+                    <i class="fas fa-scroll"></i> Komutları Gör
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" data-target="15">0</span>
+                    <span class="stat-label">Komut</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number" data-target="7">0</span>
+                    <span class="stat-label">Nadirlik</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number" data-target="1000">0</span>
+                    <span class="stat-label">Başlangıç 🌸</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="card-showcase">
+                <div class="card card-back c1">
+                    <div class="card-inner">
+                        <div class="card-glow"></div>
+                        <span class="card-icon">⚡</span>
+                    </div>
+                </div>
+                <div class="card card-front c2">
+                    <div class="card-inner">
+                        <div class="card-glow"></div>
+                        <span class="card-icon">🃏</span>
+                    </div>
+                </div>
+                <div class="card card-back c3">
+                    <div class="card-inner">
+                        <div class="card-glow"></div>
+                        <span class="card-icon">💜</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FEATURES ===== -->
+    <section class="features" id="features">
+        <div class="section-header">
+            <span class="section-tag">⚡ Güçler</span>
+            <h2 class="section-title">Bot Özellikleri</h2>
+            <p class="section-desc">Akeno'nun sunduğu şeytani yetenekler</p>
+        </div>
+        <div class="features-grid">
+
+            <div class="feature-card" data-delay="0">
+                <div class="feature-icon">
+                    <i class="fas fa-box-open"></i>
+                </div>
+                <h3>Gacha Kutu Sistemi</h3>
+                <p>3 farklı kutu tipiyle (📦 Ender, 🎁 Destansı, ✨ Efsanevi) kart çek. 10'lu çekimde %10 indirim. Ultra Mistik'e kadar 7 nadirlik seviyesi seni bekliyor.</p>
+            </div>
+
+            <div class="feature-card" data-delay="100">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-halved"></i>
+                </div>
+                <h3>3v3 Düello Sistemi</h3>
+                <p>Rakibini düelloya davet et, 3 kartlık takımını seç ve savaş. Yüksek SPD önce vurur, kritik şans devreye girer. Bahis ekleyerek dövüşü heyecanlı hale getir.</p>
+            </div>
+
+            <div class="feature-card" data-delay="200">
+                <div class="feature-icon">
+                    <i class="fas fa-store"></i>
+                </div>
+                <h3>Kart Pazarı</h3>
+                <p>Kartlarını diğer oyunculara sat ya da pazardan satın al. %5 komisyon sistemiyle sağlıklı bir ekonomi. İlanını istediğin zaman iptal edebilirsin.</p>
+            </div>
+
+            <div class="feature-card" data-delay="300">
+                <div class="feature-icon">
+                    <i class="fas fa-arrow-up"></i>
+                </div>
+                <h3>Kart Dönüştürme</h3>
+                <p>10 aynı nadirlikte kartı eritip bir üst seviyeye yükselt. Sıradan'dan Mitik'e kadar tırman. Bu güç sadece cesaretli olanlara açık.</p>
+            </div>
+
+            <div class="feature-card" data-delay="400">
+                <div class="feature-icon">
+                    <i class="fas fa-slot-machine"></i>
+                </div>
+                <h3>Slot Makinesi</h3>
+                <p>50–10.000 🌸 arasında bahis yap. 🌸🌸🌸 Sakura Jackpot ile bahsini ×50 katla. 8 farklı sembol kombinasyonu, her çekim bir macera.</p>
+            </div>
+
+            <div class="feature-card" data-delay="500">
+                <div class="feature-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <h3>Akeno ile Sohbet</h3>
+                <p>Akeno karakteriyle konuş! Kart bilgisi sor, güç karşılaştırması yap veya sadece sohbet et. Türkçe anime sorularını anlayan akıllı yanıt motoru.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== COMMANDS ===== -->
+    <section class="commands" id="commands">
+        <div class="section-header">
+            <span class="section-tag">📜 Büyüler</span>
+            <h2 class="section-title">Komutlar</h2>
+            <p class="section-desc">Akeno'nun güçlerini çağırmak için kullan</p>
+        </div>
+
+        <div class="commands-filter">
+            <button class="filter-btn active" data-filter="all">Tümü</button>
+            <button class="filter-btn" data-filter="kart">Kart</button>
+            <button class="filter-btn" data-filter="savas">Savaş</button>
+            <button class="filter-btn" data-filter="profil">Profil</button>
+            <button class="filter-btn" data-filter="ekonomi">Ekonomi</button>
+        </div>
+
+        <div class="commands-grid">
+
+            <!-- KUTU -->
+            <div class="command-card" data-category="kart">
+                <div class="cmd-header">
+                    <span class="cmd-name">/kutu ac</span>
+                    <span class="cmd-badge kart">Kart</span>
+                </div>
+                <p class="cmd-desc">Ender (500🌸), Destansı (1500🌸) veya Efsanevi (3500🌸) kutu aç, rastgele kart kazan.</p>
+            </div>
+
+            <div class="command-card" data-category="kart">
+                <div class="cmd-header">
+                    <span class="cmd-name">/kutu coklu</span>
+                    <span class="cmd-badge kart">Kart</span>
+                </div>
+                <p class="cmd-desc">10 kart çek, %10 indirimli! (4500 / 13500 / 31500 🌸). Tek seferde çok daha fazla şans.</p>
+            </div>
+
+            <div class="command-card" data-category="kart">
+                <div class="cmd-header">
+                    <span class="cmd-name">/kutu bilgi</span>
+                    <span class="cmd-badge kart">Kart</span>
+                </div>
+                <p class="cmd-desc">Tüm kutu tiplerinin çıkış oranlarını görüntüle. Mitik çıkma şansı: Ender %0.2, Efsanevi %5.</p>
+            </div>
+
+            <!-- KOLEKSİYON / KART -->
+            <div class="command-card" data-category="kart">
+                <div class="cmd-header">
+                    <span class="cmd-name">/koleksiyon</span>
+                    <span class="cmd-badge kart">Kart</span>
+                </div>
+                <p class="cmd-desc">Sahip olduğun kartları sayfalı listele. Nadirlik filtresi uygula, başkasının koleksiyonunu da gör.</p>
+            </div>
+
+            <div class="command-card" data-category="kart">
+                <div class="cmd-header">
+                    <span class="cmd-name">/kart</span>
+                    <span class="cmd-badge kart">Kart</span>
+                </div>
+                <p class="cmd-desc">Bir karakterin kart detayını gör: nadirlik, anime, ATK/DEF/HP/SPD, kaç adet sahip olduğun.</p>
+            </div>
+
+            <div class="command-card" data-category="kart">
+                <div class="cmd-header">
+                    <span class="cmd-name">/kartlar</span>
+                    <span class="cmd-badge kart">Kart</span>
+                </div>
+                <p class="cmd-desc">Oyundaki tüm karakterleri listele. Anime ve nadirliğe göre filtrele, güce göre sırala.</p>
+            </div>
+
+            <div class="command-card" data-category="kart">
+                <div class="cmd-header">
+                    <span class="cmd-name">/donustur</span>
+                    <span class="cmd-badge kart">Kart</span>
+                </div>
+                <p class="cmd-desc">10 aynı nadirlikte kartı eritip bir üst seviyede kart kazan. Sıradan'dan Mitik'e tırman!</p>
+            </div>
+
+            <!-- SAVAŞ -->
+            <div class="command-card" data-category="savas">
+                <div class="cmd-header">
+                    <span class="cmd-name">/duello</span>
+                    <span class="cmd-badge savas">Savaş</span>
+                </div>
+                <p class="cmd-desc">Rakibine 3v3 kart düellosu meydan oku. Opsiyonel bahis ekle (max 50.000 🌸). Yüksek SPD önce vurur.</p>
+            </div>
+
+            <div class="command-card" data-category="savas">
+                <div class="cmd-header">
+                    <span class="cmd-name">/takim sec</span>
+                    <span class="cmd-badge savas">Savaş</span>
+                </div>
+                <p class="cmd-desc">Koleksiyonundan kart_no ile takımına 3 kart ekle. Düello öncesi takımını hazırla.</p>
+            </div>
+
+            <div class="command-card" data-category="savas">
+                <div class="cmd-header">
+                    <span class="cmd-name">/takim goruntule</span>
+                    <span class="cmd-badge savas">Savaş</span>
+                </div>
+                <p class="cmd-desc">Mevcut düello takımını ve toplam güç istatistiklerini görüntüle.</p>
+            </div>
+
+            <!-- PROFİL -->
+            <div class="command-card" data-category="profil">
+                <div class="cmd-header">
+                    <span class="cmd-name">/bakiye</span>
+                    <span class="cmd-badge profil">Profil</span>
+                </div>
+                <p class="cmd-desc">Sakura (🌸) bakiyeni, toplam harcamanı ve günlük seri bonusunu görüntüle. Başkasına da bakabilirsin.</p>
+            </div>
+
+            <div class="command-card" data-category="profil">
+                <div class="cmd-header">
+                    <span class="cmd-name">/liderlik</span>
+                    <span class="cmd-badge profil">Profil</span>
+                </div>
+                <p class="cmd-desc">İlk 10'u gör: en zenginler, en çok kart sahipleri veya en çok harcayanlar. Kendi sıran da gösterilir.</p>
+            </div>
+
+            <div class="command-card" data-category="profil">
+                <div class="cmd-header">
+                    <span class="cmd-name">/sohbet</span>
+                    <span class="cmd-badge profil">Profil</span>
+                </div>
+                <p class="cmd-desc">Akeno ile sohbet et! Kart bilgisi sor, güç karşılaştırması yap veya oyun rehberi hakkında soru sor.</p>
+            </div>
+
+            <!-- EKONOMİ -->
+            <div class="command-card" data-category="ekonomi">
+                <div class="cmd-header">
+                    <span class="cmd-name">/gunluk</span>
+                    <span class="cmd-badge ekonomi">Ekonomi</span>
+                </div>
+                <p class="cmd-desc">Her 20 saatte 500 🌸 kazan. Art arda gün yaptıkça +100 🌸/gün seri bonusu. Max +2000 🌸/gün!</p>
+            </div>
+
+            <div class="command-card" data-category="ekonomi">
+                <div class="cmd-header">
+                    <span class="cmd-name">/slot</span>
+                    <span class="cmd-badge ekonomi">Ekonomi</span>
+                </div>
+                <p class="cmd-desc">50–10.000 🌸 bahisle slot çevir. 🌸🌸🌸 Sakura Jackpot: bahsini ×50 katla!</p>
+            </div>
+
+            <div class="command-card" data-category="ekonomi">
+                <div class="cmd-header">
+                    <span class="cmd-name">/pazar sat</span>
+                    <span class="cmd-badge ekonomi">Ekonomi</span>
+                </div>
+                <p class="cmd-desc">Kartını pazara çıkar, fiyatını belirle. %5 komisyon. Dilediğinde ilanını iptal edebilirsin.</p>
+            </div>
+
+            <div class="command-card" data-category="ekonomi">
+                <div class="cmd-header">
+                    <span class="cmd-name">/pazar liste</span>
+                    <span class="cmd-badge ekonomi">Ekonomi</span>
+                </div>
+                <p class="cmd-desc">Aktif pazar ilanlarını gözat. İlan numarasıyla istediğin kartı satın al.</p>
+            </div>
+
+            <div class="command-card" data-category="profil">
+                <div class="cmd-header">
+                    <span class="cmd-name">/yardim</span>
+                    <span class="cmd-badge profil">Profil</span>
+                </div>
+                <p class="cmd-desc">5 sayfalık interaktif rehber: ekonomi, kart & kutu, pazar ve nadirlik seviyeleri hakkında her şey.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== INVITE ===== -->
+    <section class="invite" id="invite">
+        <div class="invite-glow"></div>
+        <div class="invite-content">
+            <div class="invite-icon">⚡</div>
+            <h2 class="invite-title">Sunucuna Akeno'yu Ekle</h2>
+            <p class="invite-desc">
+                Anime kart koleksiyonunu sunucuna getir. Kurulum sadece birkaç saniye sürer,<br>
+                hemen oynamaya başlayabilirsin. Başlangıç bakiyesi 1000 🌸 hediye!
+            </p>
+            <div class="invite-buttons">
+                <a href="https://discord.com/oauth2/authorize?client_id=1543026996412682270&permissions=274877992000&integration_type=0&scope=bot+applications.commands" 
+                   class="btn btn-primary btn-large" target="_blank">
+                    <i class="fab fa-discord"></i> Sunucuna Ekle
+                </a>
+                <a href="https://discord.gg/DESTEK_SUNUCU" class="btn btn-secondary btn-large" target="_blank">
+                    <i class="fas fa-headset"></i> Destek Sunucusu
+                </a>
+            </div>
+            <div class="invite-note">
+                <i class="fas fa-shield-alt"></i>
+                Güvenli OAuth2 ile yetkilendirme — şifre veya token gerekmez.
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="logo-symbol">⚡</span>
+                <span class="logo-text">AKENO</span>
+            </div>
+            <p class="footer-text">
+                Akeno Bot — High School DxD ilhamıyla yapılmış bir kart oyunu botu.
+            </p>
+            <div class="footer-links">
+                <a href="#features">Özellikler</a>
+                <a href="#commands">Komutlar</a>
+                <a href="#invite">Ekle</a>
+            </div>
+            <p class="footer-copy">© 2026 Akeno Bot. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
