@@ -28,7 +28,8 @@
                 <li><a href="#hero" class="nav-link">Ana Sayfa</a></li>
                 <li><a href="#features" class="nav-link">Özellikler</a></li>
                 <li><a href="#commands" class="nav-link">Komutlar</a></li>
-                <li><a href="#invite" class="nav-link">Ekle</a></li>
+                <li><a href="#invite" class="nav-link">Katıl</a></li>
+                <li><a href="#feedback" class="nav-link">Şikayet & İstek</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
                 <span></span><span></span><span></span>
@@ -333,23 +334,67 @@
         <div class="invite-glow"></div>
         <div class="invite-content">
             <div class="invite-icon">⚡</div>
-            <h2 class="invite-title">Sunucuna Akeno'yu Ekle</h2>
+            <h2 class="invite-title">Aramıza Katıl</h2>
             <p class="invite-desc">
-                Anime kart koleksiyonunu sunucuna getir. Kurulum sadece birkaç saniye sürer,<br>
-                hemen oynamaya başlayabilirsin. Başlangıç bakiyesi 1000 🌸 hediye!
+                Anime kart dünyasına adım at. Discord sunucumuza katıl,<br>
+                hemen oynamaya başla. Başlangıç bakiyesi 1000 🌸 hediye!
             </p>
             <div class="invite-buttons">
-                <a href="https://discord.com/oauth2/authorize?client_id=1543026996412682270&permissions=274877992000&integration_type=0&scope=bot+applications.commands" 
+                <a href="https://discord.gg/sZWnNyhX" 
                    class="btn btn-primary btn-large" target="_blank">
-                    <i class="fab fa-discord"></i> Sunucuna Ekle
-                </a>
-                <a href="https://discord.gg/DESTEK_SUNUCU" class="btn btn-secondary btn-large" target="_blank">
-                    <i class="fas fa-headset"></i> Destek Sunucusu
+                    <i class="fab fa-discord"></i> Sunucuya Katıl
                 </a>
             </div>
             <div class="invite-note">
                 <i class="fas fa-shield-alt"></i>
-                Güvenli OAuth2 ile yetkilendirme — şifre veya token gerekmez.
+                Ücretsiz, kayıt gerekmez — Discord hesabın yeterli.
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FEEDBACK ===== -->
+    <section class="feedback" id="feedback">
+        <div class="section-header">
+            <span class="section-tag">📬 Görüşler</span>
+            <h2 class="section-title">Şikayet & İstek</h2>
+            <p class="section-desc">Bir sorun mu var? Yeni bir özellik mi istiyorsun? Buradan yaz.</p>
+        </div>
+        <div class="feedback-container">
+            <form class="feedback-form" id="feedbackForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fb-name">Discord Kullanıcı Adın</label>
+                        <input type="text" id="fb-name" placeholder="örn: speed#1234" maxlength="50" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fb-type">Tür</label>
+                        <select id="fb-type" required>
+                            <option value="" disabled selected>Seç...</option>
+                            <option value="sikayet">🚨 Şikayet</option>
+                            <option value="istek">💡 Özellik İsteği</option>
+                            <option value="hata">🐛 Hata Bildirimi</option>
+                            <option value="diger">💬 Diğer</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="fb-subject">Konu</label>
+                    <input type="text" id="fb-subject" placeholder="Kısaca konuyu yaz..." maxlength="100" required>
+                </div>
+                <div class="form-group">
+                    <label for="fb-message">Mesaj</label>
+                    <textarea id="fb-message" placeholder="Detaylı anlat..." maxlength="1000" required rows="5"></textarea>
+                    <span class="char-count"><span id="charCount">0</span>/1000</span>
+                </div>
+                <button type="submit" class="btn btn-primary btn-submit">
+                    <i class="fas fa-paper-plane"></i> Gönder
+                </button>
+            </form>
+            <div class="feedback-success" id="feedbackSuccess">
+                <div class="success-icon">✅</div>
+                <h3>Mesajın Alındı!</h3>
+                <p>En kısa sürede inceleyeceğiz. Teşekkürler!</p>
+                <button class="btn btn-secondary" id="feedbackReset">Yeni Mesaj Gönder</button>
             </div>
         </div>
     </section>
