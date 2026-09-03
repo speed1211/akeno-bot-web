@@ -308,3 +308,89 @@ console.log(
     'color: #9b30ff; font-size: 1.2rem; font-weight: bold;',
     'color: #c084fc; font-size: 0.9rem;'
 );
+
+/* ===== FEEDBACK FORM ===== */
+(function initFeedbackForm() {
+    const form         = document.getElementById('feedbackForm');
+    const successBox   = document.getElementById('feedbackSuccess');
+    const resetBtn     = document.getElementById('feedbackReset');
+    const textarea     = document.getElementById('fb-message');
+    const charCount    = document.getElementById('charCount');
+    if (!form) return;
+
+    // Karakter sayacı
+    textarea.addEventListener('input', () => {
+        const len = textarea.value.length;
+        charCount.textContent = len;
+        charCount.style.color = len > 900 ? '#ff6b6b' : 'var(--text-muted)';
+    });
+
+    // Form gönderimi
+    form.addEventListener('submit', async e => {
+        e.preventDefault();
+
+        const btn = form.querySelector('.btn-submit');
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Gönderiliyor...';
+
+        const name    = document.getElementById('fb-name').value.trim();
+        const type    = document.getElementById('fb-type').value;
+        const subject = document.getElementById('fb-subject').value.trim();
+        const message = document.getElementById('fb-message').value.trim();
+
+        const typeLabels = {
+            sikayet: '🚨 Şikayet',
+            istek:   '💡 Özellik İsteği',
+            hata:    '🐛 Hata Bildirimi',
+            diger:   '💬 Diğer',
+        };
+
+        // Discord Webhook ile gönder
+        const webhookUrl = 'https://discord.com/api/webhooks/1545083777561133136/09FxNP9N11xAQ0zjUka2v5F1ghe2AZh85saZBBcQqiECGzTeO0zfhDTintUTr_3ta_pS';
+
+        const payload = {
+            embeds: [{
+                title: `${typeLabels[type]} — ${subject}`,
+                description: message,
+                color: type === 'sikayet' ? 0xe74c3c
+                     : type === 'istek'   ? 0x9b59b6
+                     : type === 'hata'    ? 0xf39c12
+                     : 0x3498db,
+                fields: [
+                    { name: '👤 Kullanıcı', value: name, inline: true },
+                    { name: '📋 Tür',       value: typeLabels[type], inline: true },
+                ],
+                footer: { text: '✨ Akeno Bot | Geri Bildirim Formu' },
+                timestamp: new Date().toISOString(),
+            }],
+        };
+
+        try {
+            if (webhookUrl !== 'https://discord.com/api/webhooks/1545083777561133136/09FxNP9N11xAQ0zjUka2v5F1ghe2AZh85saZBBcQqiECGzTeO0zfhDTintUTr_3ta_pS') {
+                await fetch(webhookUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload),
+                });
+            }
+            // Başarı ekranı göster
+            form.style.display = 'none';
+            successBox.classList.add('visible');
+        } catch (err) {
+            btn.disabled = false;
+            btn.innerHTML = '<i class="fas fa-paper-plane"></i> Gönder';
+            alert('Bir hata oluştu, tekrar dene.');
+        }
+    });
+
+    // Sıfırla butonu
+    resetBtn.addEventListener('click', () => {
+        form.reset();
+        charCount.textContent = '0';
+        form.style.display = 'block';
+        successBox.classList.remove('visible');
+        const btn = form.querySelector('.btn-submit');
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fas fa-paper-plane"></i> Gönder';
+    });
+})();
