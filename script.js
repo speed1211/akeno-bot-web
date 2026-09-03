@@ -366,13 +366,11 @@ console.log(
         };
 
         try {
-            if (webhookUrl !== 'https://discord.com/api/webhooks/1545083777561133136/09FxNP9N11xAQ0zjUka2v5F1ghe2AZh85saZBBcQqiECGzTeO0zfhDTintUTr_3ta_pS') {
-                await fetch(webhookUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload),
-                });
-            }
+            await fetch(webhookUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload),
+            });
             // Başarı ekranı göster
             form.style.display = 'none';
             successBox.classList.add('visible');
